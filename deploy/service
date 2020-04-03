@@ -1,0 +1,15 @@
+[Unit]
+Description=No description
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/etc/docimp
+ExecStart=/etc/docimp/docimp -p 20000 -w bash
+
+[Install]
+WantedBy=multi-user.target
+
+# https://niyanchun.com/systemd-introduction.html
+# systemctl --all list-units
+# systemctl list-unit-files
