@@ -15,6 +15,11 @@ $ go build .
 $ ./deploy/deploy.sh
 ```
 
+# nginx
+```
+proxy_set_header Host $http_host;
+```
+
 # Proxy with gin
 ```
 import (
