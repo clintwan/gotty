@@ -59,3 +59,18 @@ func ProxyGotty(rg *gin.RouterGroup) {
 	})
 }
 ```
+
+# Plugin it
+## Build plugin
+```
+$ go build -buildmode=plugin -o p.so p.go
+```
+
+## Call plugin
+```
+if p, ep := plugin.Open("p.so"); ep == nil {
+	if m, em := p.Lookup("ImproveDoc"); em == nil {
+		m.(func(rg *gin.RouterGroup))(r.Group("/s"))
+	}
+}
+```
