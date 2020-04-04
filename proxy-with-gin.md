@@ -68,6 +68,8 @@ $ go build -buildmode=plugin -o p.so p.go
 
 ## Call plugin
 ```
+import "plugin"
+
 if p, ep := plugin.Open("p.so"); ep == nil {
 	if m, em := p.Lookup("ImproveDoc"); em == nil {
 		m.(func(rg *gin.RouterGroup))(r.Group("/s"))
