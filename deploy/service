@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=simple
-WorkingDirectory=/etc/docimp
+WorkingDirectory=/root
 ExecStart=/etc/docimp/docimp -p 20000 -w bash
 
 [Install]
